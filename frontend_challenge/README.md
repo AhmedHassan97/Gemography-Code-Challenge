@@ -14,3 +14,7 @@ This application shows the most starred repos on GitHub in the last 30 days with
 ## Screenshots
 
 ![App Screenshot](Capture.PNG)
+
+## Deployment
+
+This project is deployed at [vercel.com](https://codestars.vercel.app/home)
