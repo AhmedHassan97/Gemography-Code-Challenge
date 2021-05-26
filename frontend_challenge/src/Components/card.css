@@ -1,0 +1,27 @@
+.cardComponent {
+  padding: 10px;
+}
+.imgColum {
+  align-items: center;
+  margin: 2%;
+  /* border: 2px solid #555; */
+}
+.cardColum {
+  margin: 2%;
+  border: 0px solid #555;
+  height: 175px;
+}
+.cardColum .Card {
+  border: 0px solid #555;
+}
+.noOfStars {
+  width: auto;
+  margin: 2px;
+  border: 2px solid #555;
+}
+
+.noOfIssues {
+  width: auto;
+  margin: 2px;
+  border: 2px solid #555;
+}
