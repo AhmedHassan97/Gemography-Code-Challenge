@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { useState, useEffect } from "react";
 import axios from "axios";
-
+import RepoCard from "../Components/CardComponent";
 const Home = () => {
   const [repos, setRepos] = useState([]);
   const [page, setPage] = useState(1);
@@ -15,7 +15,7 @@ const Home = () => {
     const response = await axios.get(
       `https://api.github.com/search/repositories?q=created:>${year}-${month}-${day}&sort=stars&order=desc&page=${pageNumber}`
     );
-    console.log(response);
+    console.log(response.data.items[0].owner.avatar_url);
   };
 
   useEffect(() => {
@@ -28,7 +28,7 @@ const Home = () => {
 
   return (
     <div>
-      <h1>Home</h1>
+      <RepoCard />
     </div>
   );
 };
