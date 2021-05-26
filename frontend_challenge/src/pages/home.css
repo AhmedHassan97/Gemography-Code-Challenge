@@ -4,6 +4,7 @@
   display: flex;
   list-style: none;
   outline: none;
+  justify-content: center;
 }
 
 .pagination > .active > a {
@@ -22,9 +23,4 @@
 .pagination > li > span {
   color: #47ccde;
   background-color: azure;
-}
-
-.paginationBar {
-  margin-left: 5%;
-  align-items: center;
 }

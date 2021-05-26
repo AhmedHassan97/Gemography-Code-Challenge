@@ -1,27 +1,46 @@
 .cardComponent {
   padding: 10px;
 }
+
 .imgColum {
   align-items: center;
-  margin: 2%;
-  /* border: 2px solid #555; */
+  margin-right: 2%;
+}
+.Row {
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  align-items: center !important;
+}
+.Col {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+  align-items: center !important;
 }
 .cardColum {
-  margin: 2%;
+  margin-left: 2%;
   border: 0px solid #555;
-  height: 175px;
 }
 .cardColum .Card {
   border: 0px solid #555;
 }
-.noOfStars {
-  width: auto;
-  margin: 2px;
+.noOfStars,
+.noOfIssues {
+  width: max-content;
+  margin: 0.1rem;
   border: 2px solid #555;
+  padding-left: 0.2rem;
+  padding-right: 0.2rem;
 }
 
-.noOfIssues {
-  width: auto;
-  margin: 2px;
-  border: 2px solid #555;
+.card-body {
+  align-items: center !important;
+}
+@media (max-width: 1200px) {
+  .cardComponent {
+    text-align: center;
+  }
+  .noOfStars,
+  .noOfIssues {
+    width: 100%;
+  }
 }

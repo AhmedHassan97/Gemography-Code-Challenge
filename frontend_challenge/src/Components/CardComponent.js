@@ -1,13 +1,15 @@
 import React from "react";
 import { Col, Row } from "reactstrap";
 import { Card, CardTitle, CardText, CardBody, CardSubtitle } from "reactstrap";
+import { intervalToDuration } from "date-fns";
+
 import "./card.css";
 
 const RepoCard = (props) => {
   return (
     <div className="cardComponent">
-      <Row sm="12">
-        <Col sm={{ size: 1 }} md={{ size: 1 }} className="imgColum">
+      <Row className="Row">
+        <Col xl={{ size: 1 }} className="imgColum Col">
           <img
             src={props.avatarUrl}
             width="175px"
@@ -15,8 +17,7 @@ const RepoCard = (props) => {
             alt="avatar"
           ></img>
         </Col>
-        <Col sm={{ size: 10 }} md={{ size: 10 }} className="cardColum">
-          {/* <Col className="cardColum"> */}
+        <Col xl={{ size: 10 }} className="cardColum">
           <Card className="Card">
             <CardBody>
               <CardTitle tag="h3">{props.repoName}</CardTitle>
@@ -25,15 +26,33 @@ const RepoCard = (props) => {
               </CardSubtitle>
             </CardBody>
             <CardBody>
-              <Row>
-                <Col className="noOfStars" sm={{ size: 2 }} md={{ size: 2 }}>
-                  Stars: {props.starsCount}
+              <Row className="Row">
+                <Col className="Col" xl={{ size: 1 }}>
+                  <p className="noOfStars">
+                    Stars:{" "}
+                    {props.starsCount > 1000
+                      ? `${(props.starsCount / 1000).toFixed(1)}k`
+                      : props.starsCount}
+                  </p>
                 </Col>
-                <Col className="noOfIssues" sm={{ size: 2 }} md={{ size: 2 }}>
-                  Issues: {props.issuesCount}
+
+                <Col xl={{ size: 1 }} className="Col">
+                  <p className="noOfIssues">
+                    Issues:{" "}
+                    {props.issuesCount > 1000
+                      ? `${(props.issuesCount / 1000).toFixed(1)}k`
+                      : props.issuesCount}
+                  </p>
                 </Col>
-                <Col sm={{ size: 7 }} md={{ size: 7 }}>
-                  Submitted 30 days ago by tenserflow
+                <Col xl={{ size: 5 }}>
+                  Submitted{" "}
+                  {
+                    intervalToDuration({
+                      start: new Date(props.createDate),
+                      end: new Date(),
+                    }).days
+                  }{" "}
+                  days ago by {props.user}
                 </Col>
               </Row>
               <CardText> </CardText>
